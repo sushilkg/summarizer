@@ -1,0 +1,39 @@
+{
+  "name": "Summarize *this* Article",
+  "version": "2.1.0",
+  "description": "Summarize any articles with one click using your OpenAI key.",
+  "manifest_version": 3,
+  "author": "Sushil KG",
+  "action": {
+    "default_popup": "summarizer.html",
+    "default_title": "Summarize *this* Article"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "node_modules/@mozilla/readability/Readability.js",
+        "node_modules/@mozilla/readability/Readability-readerable.js",
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "options_page": "options.html",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn2yLjmjq4K2aspO5xW7ZWn9JLUQ0uUbIv9LcHnueuX0+Jy0SAtlXHdezneisLQLkFG+LC46FUXvwSzodQLisc7wYmFr+Q+USYn9w5In3j+kvTCEQfNnfZ0xbUYv+eyLl6QcpWtpM3VqRbpPTPIG/mQg+gu3pOi79YkLoo0LZeiV4lmNCaJmA4Fk+ZqE0NISoeeeHov8Hpktjm5YuH+gfSDi4vr4DCt271+uMT1sNXuqB3I/DdK2wWu8uwMVDCVRsoF5OXfeMI9epHarCdGkyy4CgXLd5Ukcc9HqFoKAeQNozNxGkO8QKjaQxfZvZmwS62oj5nReJcTzIbdmYCFI4aQIDAQAB",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

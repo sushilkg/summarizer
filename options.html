@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Options - Summarize *this* Article</title>
+    <meta charset="utf-8">
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row my-4 card">
+        <div class="card-header">
+            <h5>Options</h5>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="apiKey">
+                    Your <a href="https://platform.openai.com/account/api-keys" target="_blank">OpenAI API key</a>
+                </label>
+                <input type="text" class="form-control" id="apiKey" placeholder="OpenAI API key" autocomplete="off">
+            </div>
+            <br/>
+            <div class="form-group">
+                <label for="promptQuestion">Prompt</label>
+                <input type="text" class="form-control" id="promptQuestion" placeholder="Summarize the following text">
+            </div>
+            <br/>
+            <div class="form-group">
+                <label for="maxLength">Max Length</label>
+                <input type="text" class="form-control" id="maxLength" placeholder="Maximum characters of article to summarize from, default: 5000. If article is longer than this, rest of the article will not be summarized.">
+            </div>
+            <button type="button" id="save" class="btn btn-primary my-3">Save</button>
+            <div class="alert alert-success mt-3 d-none" role="alert" id="status"></div>
+        </div>
+        <div class="card-footer">
+            Your key and prompt is stored securely in your Chrome storage. Find the source code of this extension <a
+                href="https://github.com/sushilkg/summarizer">here</a>.
+        </div>
+    </div>
+</div>
+</body>
+<script src="options.js"></script>
+</html>

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@mozilla/readability": "^0.4.3"
+  },
+  "type": "module"
+}
